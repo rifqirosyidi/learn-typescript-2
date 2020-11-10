@@ -8,15 +8,34 @@ function add(n1: number, n2: number, sr: boolean, rp: string) {
 }
 
 // UNION TYPE
-function combine(i1: number | string, i2: number | string) {
+function combine(
+  i1: number | string,
+  i2: number | string,
+  resConv: "as-num" | "as-text"
+) {
   let res;
-  if (typeof i1 === "number" && typeof i2 === "number") {
-    res = i1 + i2;
+  if (
+    (typeof i1 === "number" && typeof i2 === "number") ||
+    resConv === "as-num"
+  ) {
+    res = +i1 + +i2;
   } else {
     res = i1.toString() + i2.toString();
+    //   }
+    //   if (resConv === "as-num") {
+    //     return +res;
+    //   } else {
+    //     return res.toString();
+    //   }
   }
   return res;
 }
+
+const combineNum = combine(12, 34, "as-num");
+console.log(combineNum);
+
+const combineStrNum = combine("12", "34", "as-num");
+console.log(combineStrNum);
 
 const num1 = 1.8;
 const num2 = 3;
