@@ -7,6 +7,17 @@ function add(n1: number, n2: number, sr: boolean, rp: string) {
   }
 }
 
+// UNION TYPE
+function combine(i1: number | string, i2: number | string) {
+  let res;
+  if (typeof i1 === "number" && typeof i2 === "number") {
+    res = i1 + i2;
+  } else {
+    res = i1.toString() + i2.toString();
+  }
+  return res;
+}
+
 const num1 = 1.8;
 const num2 = 3;
 const showRes = true;
