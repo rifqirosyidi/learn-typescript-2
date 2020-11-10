@@ -21,12 +21,14 @@ const country: {
   totalIsland: number;
   president: string[];
   javaIsland: string[];
+  symbol: [number, string];
 } = {
   name: "Indonesia",
   independence: "August 17, 1945",
   totalIsland: 17000,
   president: ["Soekarnoe", "Soehartoe"],
   javaIsland: ["East Java", "Center Java", "West Java"],
+  symbol: [62138, "Garuda"],
 };
 
 console.log(country);
