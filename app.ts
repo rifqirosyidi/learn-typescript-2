@@ -14,6 +14,13 @@ const phrase = "The Resuls is: ";
 
 add(num1, num2, showRes, phrase);
 
+// ENUMS
+enum Status {
+  PEACE = 1,
+  AT_WAR,
+  NOT_INDEPENDENT,
+}
+
 // OBJECTS
 const country: {
   name: string;
@@ -22,6 +29,7 @@ const country: {
   president: string[];
   javaIsland: string[];
   symbol: [number, string];
+  status: number;
 } = {
   name: "Indonesia",
   independence: "August 17, 1945",
@@ -29,6 +37,7 @@ const country: {
   president: ["Soekarnoe", "Soehartoe"],
   javaIsland: ["East Java", "Center Java", "West Java"],
   symbol: [62138, "Garuda"],
+  status: Status.PEACE,
 };
 
 console.log(country);
