@@ -151,5 +151,3 @@ function genErr(message: string, code: number): never {
     errorCode: code,
   };
 }
-
-genErr("An Error Occurred", 500);
