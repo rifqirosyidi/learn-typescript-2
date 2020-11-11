@@ -7,12 +7,12 @@ function add(n1: number, n2: number, sr: boolean, rp: string) {
   }
 }
 
+// ALIASSES
+type numOrStr = number | string;
+type asType = "as-num" | "as-text";
+
 // UNION TYPE
-function combine(
-  i1: number | string,
-  i2: number | string,
-  resConv: "as-num" | "as-text"
-) {
+function combine(i1: numOrStr, i2: numOrStr, resConv: asType) {
   let res;
   if (
     (typeof i1 === "number" && typeof i2 === "number") ||
@@ -89,3 +89,5 @@ for (const president of country.president) {
 country.javaIsland.forEach((island) => {
   console.log(island);
 });
+
+//
