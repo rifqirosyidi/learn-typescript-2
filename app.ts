@@ -126,3 +126,30 @@ function sumWithHandle(a: number, b: number, c: (num: number) => void) {
 sumWithHandle(100, 123, (results) => {
   console.log(results);
 });
+
+// UNKNOWN TYPE
+let userInput: unknown;
+
+// you can store any val without get any error
+userInput = 5;
+userInput = "Min";
+
+// but
+let userName: string;
+// userInput = userName // This is not allowed
+// userName = userInput // This is not allowed
+if (typeof userInput === "string") {
+  userName = userInput;
+}
+
+// NEVER
+// return type function
+
+function genErr(message: string, code: number): never {
+  throw {
+    message: message,
+    errorCode: code,
+  };
+}
+
+genErr("An Error Occurred", 500);
