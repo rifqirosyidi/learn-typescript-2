@@ -7,7 +7,8 @@ function add(n1: number, n2: number, sr: boolean, rp: string) {
   }
 }
 
-// ALIASSES
+// UNION ALIASSES
+
 type numOrStr = number | string;
 type asType = "as-num" | "as-text";
 
@@ -90,4 +91,38 @@ country.javaIsland.forEach((island) => {
   console.log(island);
 });
 
-//
+// DEFINE RETURN TYPE
+
+// function add(n1: number, n2: number): string {
+//   return n1 + n2
+// }
+
+function sum(n1: number, n2: number) {
+  return n1 + n2;
+}
+
+function printRes(num: number) {
+  console.log(`Res : ${num}`);
+}
+
+printRes(sum(1, 2));
+
+// you can do this, but if you reassign
+// let performAddition = sum;
+// performAddition = 5 // you can, but you'll encounter an error because perform addition is a function not a number
+// to solve this use type function declaration var a: Function
+
+// let performAddition: Function;
+let performAddition: (a: number, b: number) => number;
+performAddition = sum;
+
+console.log(performAddition(7, 8));
+
+function sumWithHandle(a: number, b: number, c: (num: number) => void) {
+  const res = a + b;
+  c(res);
+}
+
+sumWithHandle(100, 123, (results) => {
+  console.log(results);
+});
